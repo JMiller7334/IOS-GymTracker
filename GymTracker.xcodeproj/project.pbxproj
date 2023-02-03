@@ -17,6 +17,8 @@
 		3FFE396327E7BBD000D47F5C /* GymTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE396227E7BBD000D47F5C /* GymTrackerTests.swift */; };
 		3FFE396D27E7BBD000D47F5C /* GymTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE396C27E7BBD000D47F5C /* GymTrackerUITests.swift */; };
 		3FFE396F27E7BBD000D47F5C /* GymTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE396E27E7BBD000D47F5C /* GymTrackerUITestsLaunchTests.swift */; };
+		3FFE397E27E7CA9500D47F5C /* ViewControllerNewExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE397D27E7CA9500D47F5C /* ViewControllerNewExercise.swift */; };
+		3FFE398027E7CAC500D47F5C /* ViewControllerNewWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE397F27E7CAC500D47F5C /* ViewControllerNewWorkout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		3FFE396827E7BBD000D47F5C /* GymTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GymTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FFE396C27E7BBD000D47F5C /* GymTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymTrackerUITests.swift; sourceTree = "<group>"; };
 		3FFE396E27E7BBD000D47F5C /* GymTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3FFE397D27E7CA9500D47F5C /* ViewControllerNewExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNewExercise.swift; sourceTree = "<group>"; };
+		3FFE397F27E7CAC500D47F5C /* ViewControllerNewWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNewWorkout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				3FFE395627E7BBD000D47F5C /* LaunchScreen.storyboard */,
 				3FFE395927E7BBD000D47F5C /* Info.plist */,
 				3FFE395127E7BBCE00D47F5C /* GymTracker.xcdatamodeld */,
+				3FFE397D27E7CA9500D47F5C /* ViewControllerNewExercise.swift */,
+				3FFE397F27E7CAC500D47F5C /* ViewControllerNewWorkout.swift */,
 			);
 			path = GymTracker;
 			sourceTree = "<group>";
@@ -262,7 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FFE395327E7BBCE00D47F5C /* GymTracker.xcdatamodeld in Sources */,
+				3FFE397E27E7CA9500D47F5C /* ViewControllerNewExercise.swift in Sources */,
 				3FFE394D27E7BBCE00D47F5C /* ViewController.swift in Sources */,
+				3FFE398027E7CAC500D47F5C /* ViewControllerNewWorkout.swift in Sources */,
 				3FFE394927E7BBCE00D47F5C /* AppDelegate.swift in Sources */,
 				3FFE394B27E7BBCE00D47F5C /* SceneDelegate.swift in Sources */,
 			);

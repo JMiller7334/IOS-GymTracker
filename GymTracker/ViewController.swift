@@ -7,13 +7,35 @@
 
 import UIKit
 
+//TODO: move structs to dedicated/separate file
+struct Workout{
+    var name:String?
+    var exercises:[Exercise]
+    
+    mutating func addExercise(newExercise: Exercise){
+        print("adding new exercise: \(newExercise)")
+        self.exercises.append(newExercise)
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as! ViewControllerNewWorkout
+        var newWorkout = Workout(name: "", exercises: [])
+        newWorkout.name = ("TestWorkout")
+        print(newWorkout.name!)
+        controller.newWorkout = newWorkout
+    }
+    
+    //MARK: BUTTON FUNCTIONS
+    @IBAction func planWorkoutPressed(_ sender: UIButton) {
+        print("planWorkoutPressed")
+    }
 }
 
