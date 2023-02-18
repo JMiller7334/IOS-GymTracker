@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24E13A18CCEE1D7492D1AAA4 /* Pods_GymTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A13209540FEE7C42536679D /* Pods_GymTrackerTests.framework */; };
+		34BBA45B750832C6CD2D49E8 /* Pods_GymTracker_GymTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71DE5EFF1A55E0FE31CD08A1 /* Pods_GymTracker_GymTrackerUITests.framework */; };
+		3F96CB2329A071C60056C063 /* ViewControllerSelectWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F96CB2229A071C60056C063 /* ViewControllerSelectWorkout.swift */; };
+		3FE9BBB629A0B2FE00EC0288 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FE9BBB529A0B2FD00EC0288 /* GoogleService-Info.plist */; };
+		3FE9BBB729A0B2FE00EC0288 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FE9BBB529A0B2FD00EC0288 /* GoogleService-Info.plist */; };
+		3FE9BBB829A0B2FE00EC0288 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FE9BBB529A0B2FD00EC0288 /* GoogleService-Info.plist */; };
 		3FFE394927E7BBCE00D47F5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE394827E7BBCE00D47F5C /* AppDelegate.swift */; };
 		3FFE394B27E7BBCE00D47F5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE394A27E7BBCE00D47F5C /* SceneDelegate.swift */; };
 		3FFE394D27E7BBCE00D47F5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE394C27E7BBCE00D47F5C /* ViewController.swift */; };
@@ -19,6 +25,7 @@
 		3FFE396F27E7BBD000D47F5C /* GymTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE396E27E7BBD000D47F5C /* GymTrackerUITestsLaunchTests.swift */; };
 		3FFE397E27E7CA9500D47F5C /* ViewControllerNewExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE397D27E7CA9500D47F5C /* ViewControllerNewExercise.swift */; };
 		3FFE398027E7CAC500D47F5C /* ViewControllerNewWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE397F27E7CAC500D47F5C /* ViewControllerNewWorkout.swift */; };
+		5C998D3095E44C561A2E3010 /* Pods_GymTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 981177E28FACBF68B4A59559 /* Pods_GymTracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A13209540FEE7C42536679D /* Pods_GymTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		392370DAEE4EF98499FDC580 /* Pods-GymTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymTracker.release.xcconfig"; path = "Target Support Files/Pods-GymTracker/Pods-GymTracker.release.xcconfig"; sourceTree = "<group>"; };
+		3F96CB2229A071C60056C063 /* ViewControllerSelectWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSelectWorkout.swift; sourceTree = "<group>"; };
+		3FE9BBB529A0B2FD00EC0288 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FFE394527E7BBCE00D47F5C /* GymTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FFE394827E7BBCE00D47F5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FFE394A27E7BBCE00D47F5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +66,13 @@
 		3FFE396E27E7BBD000D47F5C /* GymTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3FFE397D27E7CA9500D47F5C /* ViewControllerNewExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNewExercise.swift; sourceTree = "<group>"; };
 		3FFE397F27E7CAC500D47F5C /* ViewControllerNewWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNewWorkout.swift; sourceTree = "<group>"; };
+		71DE5EFF1A55E0FE31CD08A1 /* Pods_GymTracker_GymTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymTracker_GymTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		981177E28FACBF68B4A59559 /* Pods_GymTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E8091CAB0F6A1F91CFC120C /* Pods-GymTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymTracker.debug.xcconfig"; path = "Target Support Files/Pods-GymTracker/Pods-GymTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		B1983A43C08067A8BC9CFCF4 /* Pods-GymTracker-GymTrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymTracker-GymTrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-GymTracker-GymTrackerUITests/Pods-GymTracker-GymTrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C10FD08A359306C0128F80EA /* Pods-GymTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymTrackerTests.release.xcconfig"; path = "Target Support Files/Pods-GymTrackerTests/Pods-GymTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		F4503DA019BB741A07C4AF33 /* Pods-GymTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-GymTrackerTests/Pods-GymTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB9B67E7A4F1F7B65FE41F9F /* Pods-GymTracker-GymTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymTracker-GymTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-GymTracker-GymTrackerUITests/Pods-GymTracker-GymTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C998D3095E44C561A2E3010 /* Pods_GymTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24E13A18CCEE1D7492D1AAA4 /* Pods_GymTrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +96,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34BBA45B750832C6CD2D49E8 /* Pods_GymTracker_GymTrackerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03E24EB5FF491209188FFEC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E8091CAB0F6A1F91CFC120C /* Pods-GymTracker.debug.xcconfig */,
+				392370DAEE4EF98499FDC580 /* Pods-GymTracker.release.xcconfig */,
+				FB9B67E7A4F1F7B65FE41F9F /* Pods-GymTracker-GymTrackerUITests.debug.xcconfig */,
+				B1983A43C08067A8BC9CFCF4 /* Pods-GymTracker-GymTrackerUITests.release.xcconfig */,
+				F4503DA019BB741A07C4AF33 /* Pods-GymTrackerTests.debug.xcconfig */,
+				C10FD08A359306C0128F80EA /* Pods-GymTrackerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		3FFE393C27E7BBCE00D47F5C = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +123,8 @@
 				3FFE396127E7BBD000D47F5C /* GymTrackerTests */,
 				3FFE396B27E7BBD000D47F5C /* GymTrackerUITests */,
 				3FFE394627E7BBCE00D47F5C /* Products */,
+				03E24EB5FF491209188FFEC5 /* Pods */,
+				88ABA8C9E333D9917F650453 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +151,8 @@
 				3FFE395127E7BBCE00D47F5C /* GymTracker.xcdatamodeld */,
 				3FFE397D27E7CA9500D47F5C /* ViewControllerNewExercise.swift */,
 				3FFE397F27E7CAC500D47F5C /* ViewControllerNewWorkout.swift */,
+				3F96CB2229A071C60056C063 /* ViewControllerSelectWorkout.swift */,
+				3FE9BBB529A0B2FD00EC0288 /* GoogleService-Info.plist */,
 			);
 			path = GymTracker;
 			sourceTree = "<group>";
@@ -136,6 +174,16 @@
 			path = GymTrackerUITests;
 			sourceTree = "<group>";
 		};
+		88ABA8C9E333D9917F650453 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				981177E28FACBF68B4A59559 /* Pods_GymTracker.framework */,
+				71DE5EFF1A55E0FE31CD08A1 /* Pods_GymTracker_GymTrackerUITests.framework */,
+				2A13209540FEE7C42536679D /* Pods_GymTrackerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3FFE397227E7BBD000D47F5C /* Build configuration list for PBXNativeTarget "GymTracker" */;
 			buildPhases = (
+				98E25E30370EFD99050FA720 /* [CP] Check Pods Manifest.lock */,
 				3FFE394127E7BBCE00D47F5C /* Sources */,
 				3FFE394227E7BBCE00D47F5C /* Frameworks */,
 				3FFE394327E7BBCE00D47F5C /* Resources */,
+				1270DA1B6A2C73DC8380FC8C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3FFE397527E7BBD000D47F5C /* Build configuration list for PBXNativeTarget "GymTrackerTests" */;
 			buildPhases = (
+				66CCB29290350B674FEA2273 /* [CP] Check Pods Manifest.lock */,
 				3FFE395A27E7BBD000D47F5C /* Sources */,
 				3FFE395B27E7BBD000D47F5C /* Frameworks */,
 				3FFE395C27E7BBD000D47F5C /* Resources */,
@@ -178,9 +229,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3FFE397827E7BBD000D47F5C /* Build configuration list for PBXNativeTarget "GymTrackerUITests" */;
 			buildPhases = (
+				506720D9A2DC354C4084E99D /* [CP] Check Pods Manifest.lock */,
 				3FFE396427E7BBD000D47F5C /* Sources */,
 				3FFE396527E7BBD000D47F5C /* Frameworks */,
 				3FFE396627E7BBD000D47F5C /* Resources */,
+				67146E710D03EECDBA18DD2F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FFE395827E7BBD000D47F5C /* LaunchScreen.storyboard in Resources */,
+				3FE9BBB629A0B2FE00EC0288 /* GoogleService-Info.plist in Resources */,
 				3FFE395527E7BBD000D47F5C /* Assets.xcassets in Resources */,
 				3FFE395027E7BBCE00D47F5C /* Main.storyboard in Resources */,
 			);
@@ -250,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FE9BBB729A0B2FE00EC0288 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,10 +312,114 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FE9BBB829A0B2FE00EC0288 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1270DA1B6A2C73DC8380FC8C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GymTracker/Pods-GymTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GymTracker/Pods-GymTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GymTracker/Pods-GymTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		506720D9A2DC354C4084E99D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GymTracker-GymTrackerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66CCB29290350B674FEA2273 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GymTrackerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67146E710D03EECDBA18DD2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GymTracker-GymTrackerUITests/Pods-GymTracker-GymTrackerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GymTracker-GymTrackerUITests/Pods-GymTracker-GymTrackerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GymTracker-GymTrackerUITests/Pods-GymTracker-GymTrackerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98E25E30370EFD99050FA720 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GymTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3FFE394127E7BBCE00D47F5C /* Sources */ = {
@@ -271,6 +430,7 @@
 				3FFE397E27E7CA9500D47F5C /* ViewControllerNewExercise.swift in Sources */,
 				3FFE394D27E7BBCE00D47F5C /* ViewController.swift in Sources */,
 				3FFE398027E7CAC500D47F5C /* ViewControllerNewWorkout.swift in Sources */,
+				3F96CB2329A071C60056C063 /* ViewControllerSelectWorkout.swift in Sources */,
 				3FFE394927E7BBCE00D47F5C /* AppDelegate.swift in Sources */,
 				3FFE394B27E7BBCE00D47F5C /* SceneDelegate.swift in Sources */,
 			);
@@ -446,6 +606,7 @@
 		};
 		3FFE397327E7BBD000D47F5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E8091CAB0F6A1F91CFC120C /* Pods-GymTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -463,7 +624,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MCC.GymTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = Jmiller.GymTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -473,6 +634,7 @@
 		};
 		3FFE397427E7BBD000D47F5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 392370DAEE4EF98499FDC580 /* Pods-GymTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,7 +652,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MCC.GymTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = Jmiller.GymTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -500,6 +662,7 @@
 		};
 		3FFE397627E7BBD000D47F5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4503DA019BB741A07C4AF33 /* Pods-GymTrackerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,7 +671,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MCC.GymTrackerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Jmiller.GymTrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -519,6 +682,7 @@
 		};
 		3FFE397727E7BBD000D47F5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C10FD08A359306C0128F80EA /* Pods-GymTrackerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -527,7 +691,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MCC.GymTrackerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Jmiller.GymTrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -538,13 +702,14 @@
 		};
 		3FFE397927E7BBD000D47F5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB9B67E7A4F1F7B65FE41F9F /* Pods-GymTracker-GymTrackerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MCC.GymTrackerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = Jmiller.GymTrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -555,13 +720,14 @@
 		};
 		3FFE397A27E7BBD000D47F5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1983A43C08067A8BC9CFCF4 /* Pods-GymTracker-GymTrackerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MCC.GymTrackerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = Jmiller.GymTrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;

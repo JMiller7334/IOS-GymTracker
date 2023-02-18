@@ -26,11 +26,18 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination as! ViewControllerNewWorkout
-        var newWorkout = Workout(name: "", exercises: [])
-        newWorkout.name = ("TestWorkout")
-        print(newWorkout.name!)
-        controller.newWorkout = newWorkout
+        if (segue.identifier == "newWorkout"){
+            print("segue: path> newWorkout")
+            let controller = segue.destination as! ViewControllerNewWorkout
+            var newWorkout = Workout(name: "", exercises: [])
+            newWorkout.name = ("TestWorkout")
+            print(newWorkout.name!)
+            controller.newWorkout = newWorkout
+            
+        }else{
+            print("segue: path> planWorkout")
+            
+        }
     }
     
     //MARK: BUTTON FUNCTIONS

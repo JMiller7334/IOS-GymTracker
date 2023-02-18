@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ViewControllerNewWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -67,10 +68,13 @@ class ViewControllerNewWorkout: UIViewController, UITableViewDelegate, UITableVi
     var newWorkout: Workout?
     @IBOutlet var editWorkoutName: UITextField!
     @IBOutlet var tableNewExercises: UITableView!
+    @IBOutlet var buttonSave: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let databaseRef = Database.database()
         
         //tableView config
         tableNewExercises.delegate = self
@@ -82,11 +86,41 @@ class ViewControllerNewWorkout: UIViewController, UITableViewDelegate, UITableVi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination as! ViewControllerNewExercise
-        print("Passing data")
-        newWorkout?.name = editWorkoutName.text
-        controller.newWorkout = newWorkout!
+        if (segue.identifier == "newExercise"){
+            print("segue: path > newExercise")
+            let controller = segue.destination as! ViewControllerNewExercise
+            print("Passing data")
+            newWorkout?.name = editWorkoutName.text
+            controller.newWorkout = newWorkout!
+        } else {
+            print("firebase: Saving workout data")
+            
+        }
     }
+    
+    
+    //TODO: DUPLICATED FUNC SHOW ALERT, SHOULD BE CALLED UNIVERSERALLY.
+    func showAlert(){
+           let alert = UIAlertController(title: "Missing Field", message: "Please enter an exercise name", preferredStyle: .alert)
+           let alertOK = UIAlertAction(title: "OK", style: .default, handler: {action -> Void in})
+        
+           alert.addAction(alertOK)
+           self.present(alert, animated: true, completion: nil)
+       }
+    
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        if (editWorkoutName.text == nil || editWorkoutName.text == ""){
+            showAlert() //missing field alert
+        } else {
+            print("database: saving to firebase.")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "NewWorkout") as! ViewControllerNewWorkout
+            self.navigationController?.viewControllers.remove(at: 1) //removes last view
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    
     
     
 
