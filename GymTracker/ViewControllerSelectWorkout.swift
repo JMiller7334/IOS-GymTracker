@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ViewControllerSelectWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //MARK: TABLEVIEW FUNCTIONS
@@ -56,11 +57,12 @@ class ViewControllerSelectWorkout: UIViewController, UITableViewDelegate, UITabl
             tableView.endUpdates()
         }
     }
-
-    
+        
     //MARK: ViewDidLoad
     var savedWorkouts: [Workout]?
     @IBOutlet var tableWorkout: UITableView!
+    private let encoder = JSONEncoder()
+    private let decoder = JSONDecoder()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,17 +73,28 @@ class ViewControllerSelectWorkout: UIViewController, UITableViewDelegate, UITabl
         // Do any additional setup after loading the view.
         
         //TODO: created workout need to be loaded in from firebase.
+        //MARK: READ DATABASE
+        let db_ref = Database.database().reference()
+        db_ref.child("data/user").observe(DataEventType.value, with: { snapshot in
+            let json = (snapshot.value as? [String: Any])!
+            for (aKey, elementData) in json {
+                print(elementData)
+                //print(aKey)
+                
+                let loadedWorkout = Workout(name: aKey, exercises: [])
+                self.savedWorkouts?.append(loadedWorkout)
+                self.tableWorkout.reloadData()
+            }
+          })
+ 
         //note: currently using an  instance of test workout
-            var testExercise = Exercise(Sets: 3, Reps: [1,1,1], Weight: [210, 215, 215], Exertion: ["9", "9", "9"], ExertionType: ["RPE", "RPE", "RPE"], RestMin: [0, 0, 0], RestSec: [30, 30, 30], Type: "str")
+        /*var testExercise = Exercise(Name: "", Sets: 3, Reps: [1,1,1], Weight: [210, 215, 215], Exertion: ["9", "9", "9"], ExertionType: ["RPE", "RPE", "RPE"], RestMin: [0, 0, 0], RestSec: [30, 30, 30], Type: "str")
             testExercise.name = "benchpress"
             
-            var testWorkout = Workout(exercises: [testExercise])
+        var testWorkout = Workout(name: "", exercises: [testExercise])
             testWorkout.name = "testWorkout"
             
-        savedWorkouts?.append(testWorkout)
-        print("appData: loaded workouts: < \(String(describing: savedWorkouts))>")
-        
-        
+        savedWorkouts?.append(testWorkout)*/
     }
     
     /*

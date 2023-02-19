@@ -10,7 +10,7 @@ import UIKit
 //TODO: move structs to dedicated/separate file
 struct Exercise{ // is like a class
     // properties are target/goals
-    var name: String?
+    var name: String
     var sets: Int
     var reps: [Int]
     var weight: [Double]
@@ -20,11 +20,21 @@ struct Exercise{ // is like a class
     var restSec: [Int]
     var type: String
     
+    var asDictionary : [String:Any] {
+        let mirror = Mirror(reflecting: self)
+        let dict = Dictionary(uniqueKeysWithValues: mirror.children.lazy.map({ (label:String?, value:Any) -> (String, Any)? in
+          guard let label = label else { return nil }
+          return (label, value)
+        }).compactMap { $0 })
+        return dict
+      }
+    
     func displayProperties(){
         print("sets: \(self.sets) | reps: \(self.reps) | weight: \(self.weight) | exertion: \(self.exertion) |exertion label: \(self.exertionType)| restMin: \(self.restMin) | RestSec: \(self.restSec)")
     }
     
-    init(Sets: Int, Reps: [Int], Weight:[Double], Exertion:[String], ExertionType:[String], RestMin:[Int], RestSec:[Int], Type:String){
+    init(Name: String ,Sets: Int, Reps: [Int], Weight:[Double], Exertion:[String], ExertionType:[String], RestMin:[Int], RestSec:[Int], Type:String){
+        self.name = Name
         self.sets = Sets
         self.reps = Reps
         self.weight = Weight
@@ -33,6 +43,19 @@ struct Exercise{ // is like a class
         self.restMin = RestMin
         self.restSec = RestSec
         self.type = Type
+    }
+    
+    //for loading in firebase data
+    init(dict: [String: Any]){
+        self.name = dict["name"] as! String
+        self.sets = dict["sets"] as! Int
+        self.reps = dict["reps"] as! [Int]
+        self.weight = dict["weight"] as! [Double]
+        self.exertion = dict["exertion"] as! [String]
+        self.exertionType = dict["exertionType"] as! [String]
+        self.restMin = dict["restMin"] as! [Int]
+        self.restSec = dict["restSec"] as! [Int]
+        self.type = dict["type"] as! String
     }
 }
 
@@ -51,7 +74,7 @@ class ViewControllerNewExercise: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet var labelSummary: UILabel!
     @IBOutlet var fieldName: UITextField!
     
-    var thisExercise = Exercise(Sets: 1, Reps: [], Weight: [], Exertion: [], ExertionType: [], RestMin: [], RestSec: [], Type: "Strength")
+    var thisExercise = Exercise(Name: "", Sets: 1, Reps: [], Weight: [], Exertion: [], ExertionType: [], RestMin: [], RestSec: [], Type: "Strength")
     
     var currentPhase = 1
     var currentSet = 1
@@ -493,8 +516,10 @@ class ViewControllerNewExercise: UIViewController, UIPickerViewDelegate, UIPicke
             } else {
                 //MARK: DATA PASSING
                 //WORKOUT STRUCT DATA HANDLING
-                thisExercise.name = fieldName.text
+                thisExercise.name = fieldName.text!
+                /*print("classInfo: \(thisExercise.asDictionary)")*/
                 newWorkout?.addExercise(newExercise: thisExercise)
+                //print("workout info: \(newWorkout?.asDictionary)")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "NewWorkout") as! ViewControllerNewWorkout
                 vc.newWorkout = newWorkout!

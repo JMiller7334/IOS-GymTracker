@@ -70,11 +70,11 @@ class ViewControllerNewWorkout: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet var tableNewExercises: UITableView!
     @IBOutlet var buttonSave: UIButton!
     
+    let USERNAME = "testUser"
+    let db_ref = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let databaseRef = Database.database()
         
         //tableView config
         tableNewExercises.delegate = self
@@ -90,11 +90,8 @@ class ViewControllerNewWorkout: UIViewController, UITableViewDelegate, UITableVi
             print("segue: path > newExercise")
             let controller = segue.destination as! ViewControllerNewExercise
             print("Passing data")
-            newWorkout?.name = editWorkoutName.text
+            newWorkout?.name = editWorkoutName.text!
             controller.newWorkout = newWorkout!
-        } else {
-            print("firebase: Saving workout data")
-            
         }
     }
     
@@ -112,7 +109,18 @@ class ViewControllerNewWorkout: UIViewController, UITableViewDelegate, UITableVi
         if (editWorkoutName.text == nil || editWorkoutName.text == ""){
             showAlert() //missing field alert
         } else {
-            print("database: saving to firebase.")
+            newWorkout?.name = editWorkoutName.text!
+            var array2Save: [Any] = []
+            //db_ref.child("data/user").setValue(newWorkout?.name)
+            for i in 0 ..< (newWorkout?.exercises.count)! {
+                array2Save.append(newWorkout?.exercises[i].asDictionary)
+            }
+            print("DATABASE: array2Save: \(array2Save)")
+            db_ref.child("data/user/\(newWorkout!.name)").setValue(array2Save)
+            
+            
+            
+            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "NewWorkout") as! ViewControllerNewWorkout
             self.navigationController?.viewControllers.remove(at: 1) //removes last view

@@ -9,8 +9,17 @@ import UIKit
 
 //TODO: move structs to dedicated/separate file
 struct Workout{
-    var name:String?
+    var name:String
     var exercises:[Exercise]
+    var asDictionary : [String:Any] {
+        let mirror = Mirror(reflecting: self)
+        let dict = Dictionary(uniqueKeysWithValues: mirror.children.lazy.map({ (label:String?, value:Any) -> (String, Any)? in
+          guard let label = label else { return nil }
+          return (label, value)
+        }).compactMap { $0 })
+        return dict
+      }
+
     
     mutating func addExercise(newExercise: Exercise){
         print("adding new exercise: \(newExercise)")
@@ -31,7 +40,7 @@ class ViewController: UIViewController {
             let controller = segue.destination as! ViewControllerNewWorkout
             var newWorkout = Workout(name: "", exercises: [])
             newWorkout.name = ("TestWorkout")
-            print(newWorkout.name!)
+            print(newWorkout.name)
             controller.newWorkout = newWorkout
             
         }else{
