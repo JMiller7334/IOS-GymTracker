@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24E13A18CCEE1D7492D1AAA4 /* Pods_GymTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A13209540FEE7C42536679D /* Pods_GymTrackerTests.framework */; };
 		34BBA45B750832C6CD2D49E8 /* Pods_GymTracker_GymTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71DE5EFF1A55E0FE31CD08A1 /* Pods_GymTracker_GymTrackerUITests.framework */; };
+		3F5FE8A929AC6CA100BC6DCD /* ViewControllerRunWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5FE8A829AC6CA100BC6DCD /* ViewControllerRunWorkout.swift */; };
 		3F96CB2329A071C60056C063 /* ViewControllerSelectWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F96CB2229A071C60056C063 /* ViewControllerSelectWorkout.swift */; };
 		3FE9BBB629A0B2FE00EC0288 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FE9BBB529A0B2FD00EC0288 /* GoogleService-Info.plist */; };
 		3FE9BBB729A0B2FE00EC0288 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FE9BBB529A0B2FD00EC0288 /* GoogleService-Info.plist */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		2A13209540FEE7C42536679D /* Pods_GymTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		392370DAEE4EF98499FDC580 /* Pods-GymTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymTracker.release.xcconfig"; path = "Target Support Files/Pods-GymTracker/Pods-GymTracker.release.xcconfig"; sourceTree = "<group>"; };
+		3F5FE8A829AC6CA100BC6DCD /* ViewControllerRunWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRunWorkout.swift; sourceTree = "<group>"; };
 		3F96CB2229A071C60056C063 /* ViewControllerSelectWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSelectWorkout.swift; sourceTree = "<group>"; };
 		3FE9BBB529A0B2FD00EC0288 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FFE394527E7BBCE00D47F5C /* GymTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				3FFE394827E7BBCE00D47F5C /* AppDelegate.swift */,
+				3F5FE8A829AC6CA100BC6DCD /* ViewControllerRunWorkout.swift */,
 				3FFE394A27E7BBCE00D47F5C /* SceneDelegate.swift */,
 				3FFE394C27E7BBCE00D47F5C /* ViewController.swift */,
 				3FFE394E27E7BBCE00D47F5C /* Main.storyboard */,
@@ -426,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5FE8A929AC6CA100BC6DCD /* ViewControllerRunWorkout.swift in Sources */,
 				3FFE395327E7BBCE00D47F5C /* GymTracker.xcdatamodeld in Sources */,
 				3FFE397E27E7CA9500D47F5C /* ViewControllerNewExercise.swift in Sources */,
 				3FFE394D27E7BBCE00D47F5C /* ViewController.swift in Sources */,
