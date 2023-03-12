@@ -9,41 +9,53 @@ import UIKit
 import FirebaseDatabase
 
 class ViewControllerSelectWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     //MARK: TABLEVIEW FUNCTIONS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (savedWorkouts?.isEmpty == true){
             return 1
         } else {
-            return (savedWorkouts?.count)!
+            if (selectedWorkout.count > 0){
+                return selectedWorkout[0].exercises.count
+            } else {
+                //default
+                return (savedWorkouts?.count)!
+            }
         }
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellWorkout", for: indexPath)
         if (savedWorkouts?.isEmpty == true){
             cell.textLabel?.text = "You have no saved workouts..."
         } else {
-            //Missing... x in string are the default values for possible nil to prevent warnings.
-            cell.textLabel?.text = "\(savedWorkouts?[indexPath.row].name ?? "Missing Name")"//TODO: give better desc for workouts. Only using workout name right now
-            
+            if (selectedWorkout.count > 0){
+                cell.textLabel?.text = "\(selectedWorkout[0].exercises[indexPath.row].name)  sets:\(selectedWorkout[0].exercises[indexPath.row].sets)  reps:\(selectedWorkout[0].exercises[indexPath.row].reps)"
+            } else {
+                //default
+                cell.textLabel?.text = "\(savedWorkouts?[indexPath.row].name ?? "Missing Name")"
+            }
         }
         return cell
     }
-    
-    
     //TABLEVIEW EDITING
     //config editing styles.
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if (savedWorkouts?.isEmpty == true){
             return .none
         } else {
-            return .delete
+            if (selectedWorkout.count > 0 ){
+                return .none
+            } else {
+                return .delete
+            }
         }
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         //handles actions for editing styles.
         if (editingStyle == .delete){
+            db_ref.child("data/user/").child(savedWorkouts![indexPath.row].name).removeValue()
+            
             
             //indicates actions taken for the tableview to update after user deletes
             tableView.beginUpdates()
@@ -56,13 +68,30 @@ class ViewControllerSelectWorkout: UIViewController, UITableViewDelegate, UITabl
             
             tableView.endUpdates()
         }
+        print(savedWorkouts)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("indexpath:\(indexPath.row)")
+        if (selectedWorkout.isEmpty && savedWorkouts?.count ?? 0 > 0){
+            selectedWorkout.append(savedWorkouts![indexPath.row])
+            mainTitle.text = ("Selected: \(selectedWorkout[0].name)")
+        } else {
+            mainTitle.text = ("Select a Workout")
+            selectedWorkout = []
+        }
+        self.tableWorkout.reloadData()
     }
         
     //MARK: ViewDidLoad
+    let db_ref = Database.database().reference()
+    
+    var selectedWorkout: [Workout] = []
     var savedWorkouts: [Workout]?
     @IBOutlet var tableWorkout: UITableView!
-    private let encoder = JSONEncoder()
-    private let decoder = JSONDecoder()
+    @IBOutlet var selectButton: UIButton!
+    @IBOutlet var mainTitle: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,18 +101,34 @@ class ViewControllerSelectWorkout: UIViewController, UITableViewDelegate, UITabl
         tableWorkout.dataSource = self
         // Do any additional setup after loading the view.
         
+        selectButton.isHidden = true
+        
+        
         //TODO: created workout need to be loaded in from firebase.
         //MARK: READ DATABASE
-        let db_ref = Database.database().reference()
         db_ref.child("data/user").observe(DataEventType.value, with: { snapshot in
-            let json = (snapshot.value as? [String: Any])!
-            for (aKey, elementData) in json {
-                print(elementData)
-                //print(aKey)
-                
-                let loadedWorkout = Workout(name: aKey, exercises: [])
-                self.savedWorkouts?.append(loadedWorkout)
-                self.tableWorkout.reloadData()
+            if (snapshot.childrenCount != 0){
+                let json = (snapshot.value as? [String: Any])!
+                for (aKey, elementData) in json {
+                    var loadedWorkout = Workout(name: aKey, exercises: [])
+                    
+                    if let dataWrapper = elementData as? [Any]{
+                        //if let jsonData = dataWrapper[0] as? [String: Any]{
+                        for i in 0 ..< dataWrapper.count{
+                            
+                            if let jsonData = dataWrapper[i] as? [String: Any]{
+                                //create a class from JSON Data
+                                let loaded_exercise = Exercise(Name: jsonData["name"] as! String, Sets: jsonData["sets"] as! Int, Reps: jsonData["reps"] as! [Int], Weight: jsonData["weight"] as! [Double], Exertion: jsonData["exertion"] as! [Int], ExertionType: jsonData["exertionType"] as! [String], RestMin: jsonData["restMin"] as! [Int], RestSec: jsonData["restSec"] as! [Int], Type: jsonData["type"] as! String)
+                                loadedWorkout.addExercise(newExercise: loaded_exercise)
+                            }
+                            
+                        }
+                        print("TABLE RELOADED")
+                        self.savedWorkouts?.append(loadedWorkout)
+                        self.tableWorkout.reloadData()
+                    }
+                }
+                print(self.savedWorkouts)
             }
           })
  
@@ -96,6 +141,14 @@ class ViewControllerSelectWorkout: UIViewController, UITableViewDelegate, UITabl
             
         savedWorkouts?.append(testWorkout)*/
     }
+    
+    @IBAction func selectButtonPressed(_ sender: UIButton) {
+        print("SELECT")
+    }
+    
+    
+  
+    
     
     /*
     // MARK: - Navigation

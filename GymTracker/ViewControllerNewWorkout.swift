@@ -70,7 +70,6 @@ class ViewControllerNewWorkout: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet var tableNewExercises: UITableView!
     @IBOutlet var buttonSave: UIButton!
     
-    let USERNAME = "testUser"
     let db_ref = Database.database().reference()
     
     override func viewDidLoad() {
@@ -100,7 +99,6 @@ class ViewControllerNewWorkout: UIViewController, UITableViewDelegate, UITableVi
     func showAlert(){
            let alert = UIAlertController(title: "Missing Field", message: "Please enter an exercise name", preferredStyle: .alert)
            let alertOK = UIAlertAction(title: "OK", style: .default, handler: {action -> Void in})
-        
            alert.addAction(alertOK)
            self.present(alert, animated: true, completion: nil)
        }
@@ -113,7 +111,7 @@ class ViewControllerNewWorkout: UIViewController, UITableViewDelegate, UITableVi
             var array2Save: [Any] = []
             //db_ref.child("data/user").setValue(newWorkout?.name)
             for i in 0 ..< (newWorkout?.exercises.count)! {
-                array2Save.append(newWorkout?.exercises[i].asDictionary)
+                array2Save.append(newWorkout?.exercises[i].asDictionary as Any)
             }
             print("DATABASE: array2Save: \(array2Save)")
             db_ref.child("data/user/\(newWorkout!.name)").setValue(array2Save)

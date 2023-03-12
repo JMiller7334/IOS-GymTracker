@@ -227,7 +227,7 @@ class ViewControllerNewExercise: UIViewController, UIPickerViewDelegate, UIPicke
     var pickerRestMin: [String] = []
     var pickerRestSec: [String] = []
     //phase 4
-    var pickerRPE: [String] = ["None", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+    var pickerRPE: [String] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
     var pickerRPELabel: [String] = ["RPE", "RIR"]
     //picker position defaults
     var defaults0 = 1 // this is the default for the choice of whether or not to track weight for your set.

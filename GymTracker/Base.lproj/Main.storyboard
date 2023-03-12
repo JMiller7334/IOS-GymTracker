@@ -29,9 +29,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="sW8-Iu-hdg" kind="show" id="dCA-h8-mRb"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -50,11 +47,15 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Select"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ear-eE-Wpt">
-                                <rect key="frame" x="49" y="804" width="134" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vG-Cl-ARt">
+                                <rect key="frame" x="242" y="804" width="134" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Back"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Select"/>
+                                <connections>
+                                    <action selector="selectButtonPressed:" destination="Xjs-aM-aTL" eventType="touchUpInside" id="thf-xW-LEe"/>
+                                    <segue destination="sW8-Iu-hdg" kind="show" id="KeY-Z6-AWf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fVH-wg-7Aa"/>
@@ -71,6 +72,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="tcM-mr-xi2"/>
                     <connections>
+                        <outlet property="mainTitle" destination="RWs-cI-4Ez" id="XNJ-NM-Xor"/>
+                        <outlet property="selectButton" destination="8vG-Cl-ARt" id="FHZ-1t-0Qb"/>
                         <outlet property="tableWorkout" destination="KYf-7e-6lH" id="vav-AZ-PRT"/>
                     </connections>
                 </viewController>
