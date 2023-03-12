@@ -71,14 +71,16 @@ class ViewControllerSelectWorkout: UIViewController, UITableViewDelegate, UITabl
         print(savedWorkouts)
     }
     
+    //TABLE VIEW ON ROW SELECTED//
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("indexpath:\(indexPath.row)")
         if (selectedWorkout.isEmpty && savedWorkouts?.count ?? 0 > 0){
             selectedWorkout.append(savedWorkouts![indexPath.row])
             mainTitle.text = ("Selected: \(selectedWorkout[0].name)")
+            selectButton.isHidden = false
         } else {
             mainTitle.text = ("Select a Workout")
             selectedWorkout = []
+            selectButton.isHidden = true
         }
         self.tableWorkout.reloadData()
     }
