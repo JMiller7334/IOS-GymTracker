@@ -14,7 +14,7 @@ struct Exercise{ // is like a class
     var sets: Int
     var reps: [Int]
     var weight: [Double]
-    var exertion: [String]
+    var exertion: [Int]
     var exertionType: [String]
     var restMin: [Int]
     var restSec: [Int]
@@ -33,7 +33,7 @@ struct Exercise{ // is like a class
         print("sets: \(self.sets) | reps: \(self.reps) | weight: \(self.weight) | exertion: \(self.exertion) |exertion label: \(self.exertionType)| restMin: \(self.restMin) | RestSec: \(self.restSec)")
     }
     
-    init(Name: String ,Sets: Int, Reps: [Int], Weight:[Double], Exertion:[String], ExertionType:[String], RestMin:[Int], RestSec:[Int], Type:String){
+    init(Name: String ,Sets: Int, Reps: [Int], Weight:[Double], Exertion:[Int], ExertionType:[String], RestMin:[Int], RestSec:[Int], Type:String){
         self.name = Name
         self.sets = Sets
         self.reps = Reps
@@ -51,7 +51,7 @@ struct Exercise{ // is like a class
         self.sets = dict["sets"] as! Int
         self.reps = dict["reps"] as! [Int]
         self.weight = dict["weight"] as! [Double]
-        self.exertion = dict["exertion"] as! [String]
+        self.exertion = dict["exertion"] as! [Int]
         self.exertionType = dict["exertionType"] as! [String]
         self.restMin = dict["restMin"] as! [Int]
         self.restSec = dict["restSec"] as! [Int]
@@ -324,7 +324,7 @@ class ViewControllerNewExercise: UIViewController, UIPickerViewDelegate, UIPicke
                 textSummary.text = (textSummary.text + "  \(pickerRPELabel[pIndex1]): \(pickerRPE[pIndex0])")
                 
                 //STRUCT UPDATE\\
-                thisExercise.exertion[currentSet-1] = String(pickerRPE[pIndex0])
+                thisExercise.exertion[currentSet-1] = Int(pickerRPE[pIndex0])!
                 thisExercise.exertionType[currentSet-1] = String(pickerRPELabel[pIndex1])
                 
             case 3:
@@ -358,7 +358,7 @@ class ViewControllerNewExercise: UIViewController, UIPickerViewDelegate, UIPicke
                     for _ in 1...thisExercise.sets {
                         thisExercise.reps.append(0)
                         thisExercise.weight.append(0.0)
-                        thisExercise.exertion.append("0")
+                        thisExercise.exertion.append(0)
                         thisExercise.exertionType.append("RPE")
                         thisExercise.restMin.append(0)
                         thisExercise.restSec.append(0)
