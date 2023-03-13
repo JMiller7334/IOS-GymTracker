@@ -42,26 +42,34 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vG-Cl-ARt">
-                                <rect key="frame" x="140" y="814" width="134" height="35"/>
+                                <rect key="frame" x="205" y="811" width="83.5" height="51"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Select"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Begin" buttonSize="large"/>
                                 <connections>
                                     <action selector="selectButtonPressed:" destination="Xjs-aM-aTL" eventType="touchUpInside" id="thf-xW-LEe"/>
                                     <segue destination="sW8-Iu-hdg" kind="show" id="KeY-Z6-AWf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jh6-AI-KRa">
+                                <rect key="frame" x="132" y="811" width="51" height="51"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="&lt;" buttonSize="large"/>
+                                <connections>
+                                    <action selector="revertButtonPressed:" destination="Xjs-aM-aTL" eventType="touchUpInside" id="R51-Py-CP6"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fVH-wg-7Aa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8vG-Cl-ARt" firstAttribute="top" secondItem="KYf-7e-6lH" secondAttribute="bottom" constant="26" id="2Zc-oa-fVe"/>
                             <constraint firstItem="RWs-cI-4Ez" firstAttribute="leading" secondItem="fVH-wg-7Aa" secondAttribute="leading" constant="20" id="3P7-ah-xjh"/>
+                            <constraint firstItem="fVH-wg-7Aa" firstAttribute="trailing" secondItem="8vG-Cl-ARt" secondAttribute="trailing" constant="125.5" id="Gyp-0u-oEJ"/>
+                            <constraint firstItem="8vG-Cl-ARt" firstAttribute="bottom" secondItem="fVH-wg-7Aa" secondAttribute="bottom" id="SB4-0v-fLa"/>
                             <constraint firstItem="KYf-7e-6lH" firstAttribute="leading" secondItem="fVH-wg-7Aa" secondAttribute="leading" id="Wk3-MF-KeA"/>
-                            <constraint firstItem="8vG-Cl-ARt" firstAttribute="leading" secondItem="fVH-wg-7Aa" secondAttribute="leading" constant="140" id="YoK-QU-PsH"/>
                             <constraint firstItem="fVH-wg-7Aa" firstAttribute="trailing" secondItem="RWs-cI-4Ez" secondAttribute="trailing" constant="20" id="bod-mQ-fMV"/>
-                            <constraint firstItem="8vG-Cl-ARt" firstAttribute="top" secondItem="KYf-7e-6lH" secondAttribute="bottom" constant="26" id="c3K-gQ-zaK"/>
-                            <constraint firstItem="fVH-wg-7Aa" firstAttribute="trailing" secondItem="8vG-Cl-ARt" secondAttribute="trailing" constant="140" id="fKb-hb-ACx"/>
-                            <constraint firstItem="fVH-wg-7Aa" firstAttribute="bottom" secondItem="8vG-Cl-ARt" secondAttribute="bottom" constant="13" id="iq5-p8-A3V"/>
+                            <constraint firstItem="8vG-Cl-ARt" firstAttribute="baseline" secondItem="Jh6-AI-KRa" secondAttribute="baseline" id="c1L-0d-X7e"/>
+                            <constraint firstItem="8vG-Cl-ARt" firstAttribute="top" secondItem="KYf-7e-6lH" secondAttribute="bottom" constant="23" id="g2G-hg-qcG"/>
+                            <constraint firstItem="8vG-Cl-ARt" firstAttribute="leading" secondItem="Jh6-AI-KRa" secondAttribute="trailing" constant="22" id="itU-zb-gJC"/>
                             <constraint firstItem="KYf-7e-6lH" firstAttribute="top" secondItem="fVH-wg-7Aa" secondAttribute="top" constant="100" id="npY-KW-OFF"/>
                             <constraint firstItem="RWs-cI-4Ez" firstAttribute="top" secondItem="fVH-wg-7Aa" secondAttribute="top" constant="50" id="uZX-V7-WEy"/>
                             <constraint firstItem="fVH-wg-7Aa" firstAttribute="trailing" secondItem="KYf-7e-6lH" secondAttribute="trailing" id="uqj-Pe-4gw"/>
@@ -69,8 +77,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="tcM-mr-xi2"/>
                     <connections>
+                        <outlet property="beginButton" destination="8vG-Cl-ARt" id="UG0-gU-dkh"/>
                         <outlet property="mainTitle" destination="RWs-cI-4Ez" id="XNJ-NM-Xor"/>
-                        <outlet property="selectButton" destination="8vG-Cl-ARt" id="FHZ-1t-0Qb"/>
+                        <outlet property="revertButton" destination="Jh6-AI-KRa" id="j4A-jG-gCd"/>
                         <outlet property="tableWorkout" destination="KYf-7e-6lH" id="vav-AZ-PRT"/>
                     </connections>
                 </viewController>

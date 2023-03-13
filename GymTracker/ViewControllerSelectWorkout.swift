@@ -56,10 +56,8 @@ class ViewControllerSelectWorkout: UIViewController, UITableViewDelegate, UITabl
         if (editingStyle == .delete){
             db_ref.child("data/user/").child(savedWorkouts![indexPath.row].name).removeValue()
             
-            
             //indicates actions taken for the tableview to update after user deletes
             tableView.beginUpdates()
-            
             savedWorkouts?.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             if (savedWorkouts?.isEmpty == true){
@@ -76,11 +74,13 @@ class ViewControllerSelectWorkout: UIViewController, UITableViewDelegate, UITabl
         if (selectedWorkout.isEmpty && savedWorkouts?.count ?? 0 > 0){
             selectedWorkout.append(savedWorkouts![indexPath.row])
             mainTitle.text = ("Selected: \(selectedWorkout[0].name)")
-            selectButton.isHidden = false
+            beginButton.isHidden = false
+            revertButton.isHidden = false
         } else {
             mainTitle.text = ("Select a Workout")
             selectedWorkout = []
-            selectButton.isHidden = true
+            beginButton.isHidden = true
+            revertButton.isHidden = true
         }
         self.tableWorkout.reloadData()
     }
@@ -91,7 +91,8 @@ class ViewControllerSelectWorkout: UIViewController, UITableViewDelegate, UITabl
     var selectedWorkout: [Workout] = []
     var savedWorkouts: [Workout]?
     @IBOutlet var tableWorkout: UITableView!
-    @IBOutlet var selectButton: UIButton!
+    @IBOutlet var beginButton: UIButton!
+    @IBOutlet var revertButton: UIButton!
     @IBOutlet var mainTitle: UILabel!
 
     
@@ -103,12 +104,13 @@ class ViewControllerSelectWorkout: UIViewController, UITableViewDelegate, UITabl
         tableWorkout.dataSource = self
         // Do any additional setup after loading the view.
         
-        selectButton.isHidden = true
+        beginButton.isHidden = true
+        revertButton.isHidden = true
         
         
         //TODO: created workout need to be loaded in from firebase.
         //MARK: READ DATABASE
-        db_ref.child("data/user").observe(DataEventType.value, with: { snapshot in
+        db_ref.child("data/user").observeSingleEvent(of: .value, with: { snapshot in //observe(DataEventType.value, with: { snapshot in
             if (snapshot.childrenCount != 0){
                 let json = (snapshot.value as? [String: Any])!
                 for (aKey, elementData) in json {
@@ -148,6 +150,13 @@ class ViewControllerSelectWorkout: UIViewController, UITableViewDelegate, UITabl
         print("SELECT")
     }
     
+    @IBAction func revertButtonPressed(_ sender: UIButton) {
+        mainTitle.text = ("Select a Workout")
+        selectedWorkout = []
+        beginButton.isHidden = true
+        revertButton.isHidden = true
+        self.tableWorkout.reloadData()
+    }
     
   
     
